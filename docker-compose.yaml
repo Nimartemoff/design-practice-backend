@@ -12,8 +12,6 @@ services:
       - db
     ports:
       - 3001:3001
-    networks:
-      - my-net
   db:
     image: postgres
     environment:
@@ -23,11 +21,4 @@ services:
       - ./postgres:/var/lib/postgresql/data
     expose:
       - '5432'
-    ports:
-      - 5432:5432
-    networks:
-      - my-net
     restart: always
-
-networks:
-  my-net:
