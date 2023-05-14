@@ -12,6 +12,8 @@ services:
       - db
     ports:
       - 3001:3001
+    networks:
+      - my-net
   db:
     image: postgres
     environment:
@@ -23,4 +25,9 @@ services:
       - '5432'
     ports:
       - 5432:5432
+    networks:
+      - my-net
     restart: always
+
+networks:
+  my-net:
